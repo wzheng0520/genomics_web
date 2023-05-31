@@ -1,0 +1,9 @@
+site_name: SDI Genomics Hubs
+site_url: https://example.com/
+nav:
+    - Home: index.md
+    - Genomics Document Page - Lab: document.md
+    - On-site data processing: onsite.md
+    - CRO data processing: cro.md
+    - Data Browser: data.md
+theme: readthedocs
