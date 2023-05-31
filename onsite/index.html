@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/onsite/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>On-site data processing - SDI Genomics Hubs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "On-site data processing";
+        var mkdocs_page_input_path = "onsite.md";
+        var mkdocs_page_url = "/onsite/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> SDI Genomics Hubs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../document/">Genomics Document Page - Lab</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">On-site data processing</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#data-ingestion-from-on-site">Data Ingestion From On-Site</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#data-transfer-sequencer-bcl-data-automatically-transfer">Data Transfer: Sequencer BCL data automatically transfer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#demultiplexing">Demultiplexing</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../cro.md">CRO data processing</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../data/">Data Browser</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">SDI Genomics Hubs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>On-site data processing</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="genomics-hub-on-site-data-processing">Genomics Hub On-Site Data Processing</h1>
+<h2 id="data-ingestion-from-on-site">Data Ingestion From On-Site</h2>
+<h3 id="data-transfer-sequencer-bcl-data-automatically-transfer">Data Transfer: Sequencer BCL data automatically transfer</h3>
+<ul>
+<li>
+<p>The sequencer will automatically transfer the generated raw BCL data into the <code>seqout</code> folder in Pure Storage:</p>
+<p>Example:
+<pre><code> /purexxxx/hubs/genomics/seqout/{site_name}{instrument_manufacturer}{serial_number} </code></pre> </p>
+</li>
+<li>
+<p>Data stored in pure storage is <code>read only</code> by everyone, <code>writable only</code> by instrument.</p>
+<p>Data stored in this path of pure storage will be automatically synchronized into an AWS S3 bucket under the name altos-lab-genomics-seqout:
+<pre><code> s3://altos-lab-genomics-seqout/{site_name}<em>{instrument_manufacturer}</em>{serial_number]} </code></pre></p>
+</li>
+</ul>
+<h3 id="demultiplexing">Demultiplexing</h3>
+<ul>
+<li>
+<p>Demultiplexing on Nextflow Tower Manually (Not Recommend):</p>
+<ul>
+<li>BCL data can be demultiplexed through the demultiplexing pipeline of the Nextflow Tower</li>
+</ul>
+</li>
+<li>
+<p>Demultiplexing on Nextflow Tower Automatically (Recommend)</p>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1wc8YL9THBm5JfrHw4Y_Su7b9F7NkeR9RHj-apLC0ChY/edit#slide=id.g1a6804f61de_0_167">Altos Labs - Genomics Data Hub - Site User Guide v3</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../document/" class="btn btn-neutral float-left" title="Genomics Document Page - Lab"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../data/" class="btn btn-neutral float-right" title="Data Browser">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../document/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../data/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
