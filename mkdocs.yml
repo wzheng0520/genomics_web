@@ -7,6 +7,6 @@ nav:
     - Home: index.md
     - Genomics Document Page - Lab: document.md
     - On-site data processing: onsite.md
-    - CRO data processing: cro.md
+    - Pipeline Introduction: pipeline.md
     - Data Browser: data.md
 theme: readthedocs
