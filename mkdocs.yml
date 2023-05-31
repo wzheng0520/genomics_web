@@ -1,6 +1,6 @@
 site_name: SDI Genomics Hubs
 repo_name: wzheng0520/genomics_web
-repo_url: https://wzheng0520.github.io/genomics_web/
+repo_url: https://wzheng0520.github.io/genomics_web
 site_url: https://sdi.genomics.hubs.altoslabs.com
 nav:
     - Home: index.md
