@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://sdi.genomics.hubs.altoslabs.com/</loc>
+         <loc>https://sdi.genomics.hubs.altoslabs.com/sdi/</loc>
          <lastmod>2023-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sdi.genomics.hubs.altoslabs.com/data/</loc>
+         <loc>https://sdi.genomics.hubs.altoslabs.com/sdi/data/</loc>
          <lastmod>2023-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sdi.genomics.hubs.altoslabs.com/document/</loc>
+         <loc>https://sdi.genomics.hubs.altoslabs.com/sdi/document/</loc>
          <lastmod>2023-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sdi.genomics.hubs.altoslabs.com/onsite/</loc>
+         <loc>https://sdi.genomics.hubs.altoslabs.com/sdi/onsite/</loc>
+         <lastmod>2023-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sdi.genomics.hubs.altoslabs.com/sdi/pipeline/</loc>
          <lastmod>2023-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
